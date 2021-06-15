@@ -54,7 +54,7 @@ class AppUI(Ui_BrightnessAdjust, QtWidgets.QMainWindow):
             return False
         return True
 
-    def enable_advanced_mode(self, state: bool):
+    def enable_advanced_mode(self, state):
         """
         Enable or Disable advanced mode. Also changes Registry Entry for AdvancedMode.
         :param state: True to enable, False to disable
@@ -182,7 +182,7 @@ class AppUI(Ui_BrightnessAdjust, QtWidgets.QMainWindow):
         self.horizontalSlider.setValue(100)
 
     @staticmethod
-    def percent_to_value(percent: int):
+    def percent_to_value(percent):
         """
         Converts percentages to actual value between 0-128
         :param: percent: Percentage in int
