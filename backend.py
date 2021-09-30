@@ -73,13 +73,25 @@ def changeGamma(brightness):
         logging.error("HDC not found\n")
 
 
+def apply_brightness(percent):
+    """
+    Converts percentages to actual brightness value between 0-128 and applies the brightness.
+    :param: percent: Percentage in int
+    """
+    if percent<10: percent = 10
+    if percent>100: percent = 100
+    value = int((percent / 100) * 128)
+    changeGamma(value)
+    return percent
+
+
 if __name__ == '__main__':
-    changeGamma(20)
+    apply_brightness(20)
     import time
 
     logging.info("Reverting in 2 second. DON'T EXIT!!")
     time.sleep(2)
-    changeGamma(128)
+    apply_brightness(100)
 
 
 
