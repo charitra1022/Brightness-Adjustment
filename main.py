@@ -1,5 +1,5 @@
 import sys
-from backend import changeGamma
+from backend import apply_brightness
 
 from UI.main_window import Ui_BrightnessAdjust
 from PyQt5 import QtCore, QtWidgets
@@ -171,7 +171,7 @@ class AppUI(Ui_BrightnessAdjust, QtWidgets.QMainWindow):
             level = " " + level
         self.brightnessLevel.setText(level)
 
-        changeGamma(self.percent_to_value(value))
+        apply_brightness(value)
         self.save_brightness_value(value)
 
     def reset(self):
@@ -180,16 +180,6 @@ class AppUI(Ui_BrightnessAdjust, QtWidgets.QMainWindow):
         :return: None
         """
         self.horizontalSlider.setValue(100)
-
-    @staticmethod
-    def percent_to_value(percent):
-        """
-        Converts percentages to actual value between 0-128
-        :param: percent: Percentage in int
-        :return: value corresponding to 128 as 100%
-        """
-        value = (percent / 100) * 128
-        return int(value)
 
     @staticmethod
     def save_brightness_value(value):
