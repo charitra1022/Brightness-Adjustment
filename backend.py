@@ -63,8 +63,12 @@ def changeGamma(brightness):
                 logging.info("Brightness set!!\n")
             else:
                 logging.error("Unable to set brightness\n")
-        if ReleaseDC(hdc):  logging.info("HDC released\n")
-        logging.debug("ReleaseDC Status:" + str(ReleaseDC(hdc)) + "\n")
+        
+        try:
+            if ReleaseDC(hdc):  logging.info("HDC released\n")
+            logging.debug("ReleaseDC Status:" + str(ReleaseDC(hdc)) + "\n")
+        except Exception as error:
+            logging.error(error)
     else:
         logging.error("HDC not found\n")
 
