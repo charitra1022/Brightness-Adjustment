@@ -63,19 +63,35 @@ def changeGamma(brightness):
                 logging.info("Brightness set!!\n")
             else:
                 logging.error("Unable to set brightness\n")
-        if ReleaseDC(hdc):  logging.info("HDC released\n")
-        logging.debug("ReleaseDC Status:" + str(ReleaseDC(hdc)) + "\n")
+        
+        try:
+            if ReleaseDC(hdc):  logging.info("HDC released\n")
+            logging.debug("ReleaseDC Status:" + str(ReleaseDC(hdc)) + "\n")
+        except Exception as error:
+            logging.error(error)
     else:
         logging.error("HDC not found\n")
 
 
+def apply_brightness(percent):
+    """
+    Converts percentages to actual brightness value between 0-128 and applies the brightness.
+    :param: percent: Percentage in int
+    """
+    if percent<10: percent = 10
+    if percent>100: percent = 100
+    value = int((percent / 100) * 128)
+    changeGamma(value)
+    return percent
+
+
 if __name__ == '__main__':
-    changeGamma(20)
+    apply_brightness(20)
     import time
 
     logging.info("Reverting in 2 second. DON'T EXIT!!")
     time.sleep(2)
-    changeGamma(128)
+    apply_brightness(100)
 
 
 
