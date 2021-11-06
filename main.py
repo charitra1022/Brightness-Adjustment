@@ -141,7 +141,7 @@ class AppUI(Ui_BrightnessAdjust, QtWidgets.QMainWindow):
         msgBox.setInformativeText("<p>This app has been made by <u>Charitra Agarwal</u>.</p>"
                                   "<p>He is a passionate programmer having command in Python, C and C++. He has made "
                                   "some awesome desktop application using Python that you can check out on this "
-                                  "<a href='https://github.com/chiku1022'>GitHub Profile</a>. You can contact him on "
+                                  "<a href='https://github.com/charitra1022'>GitHub Profile</a>. You can contact him on "
                                   "<a href='https://instagram.com/everything_computerized/'>Instagram</a>.</p>"
                                   "<p>He is also on YouTube as "
                                   "<a href='https://youtube.com/c/EverythingComputerized'>Everything Computerized</a> "
