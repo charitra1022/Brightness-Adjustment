@@ -118,7 +118,7 @@ class AppUI(Ui_BrightnessAdjust, QtWidgets.QMainWindow):
                                   "shut-down. In order to apply the previous changes, just open the app again after "
                                   "reboot or shut-down, and all the changes will be applied again.</p>"
                                   "<p>If you face any difficulty/unusual thing/bug, report it to the "
-                                  "<a href='https://github.com/chiku1022'>github repository</a> "
+                                  "<a href='https://github.com/charitra1022'>github repository</a> "
                                   "by creating the issue and explaining the problem. We will try to fix it as soon as "
                                   "possible.</p>"
                                   "<p>This app is updated regularly, so many fixes and features are expected to be "
